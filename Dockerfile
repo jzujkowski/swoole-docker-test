@@ -33,7 +33,6 @@ php7-gd \
 php7-gettext \
 php7-json \
 php7-xml \
-php7-mongodb \
 php7 \
 php7-iconv \
 php7-sysvshm \
