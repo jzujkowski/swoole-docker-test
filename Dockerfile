@@ -79,6 +79,8 @@ WORKDIR /app
 ADD run.sh /app
 ADD swoole.php /app
 
+RUN chmod +x /app/run.sh
+
 #CMD ["/root/default_entry.sh"]
 #CMD ["php-fpm7", "-F"]
 
