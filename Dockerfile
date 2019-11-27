@@ -74,8 +74,23 @@ COPY php.ini /etc/php7/
 #ADD default_entry.sh /root/
 #COPY php-fpm.conf /etc/php7/php-fpm.conf
 
-#EXPOSE 9000
-#EXPOSE 9501
+WORKDIR /app
+
+ADD run.sh /app
+ADD swoole.php /app
 
 #CMD ["/root/default_entry.sh"]
 #CMD ["php-fpm7", "-F"]
+
+RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.2/dumb-init_1.2.2_amd64
+RUN chmod +x /usr/local/bin/dumb-init
+
+ENTRYPOINT ["/usr/local/bin/dumb-init", "--"]
+
+VOLUME /code
+
+EXPOSE 1215
+EXPOSE 9000
+EXPOSE 9501
+
+CMD ["/app/run.sh"]
