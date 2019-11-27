@@ -74,8 +74,8 @@ COPY php.ini /etc/php7/
 #ADD default_entry.sh /root/
 #COPY php-fpm.conf /etc/php7/php-fpm.conf
 
-EXPOSE 9000
-EXPOSE 9501
+#EXPOSE 9000
+#EXPOSE 9501
 
 #CMD ["/root/default_entry.sh"]
-CMD ["php-fpm7", "-F"]
+#CMD ["php-fpm7", "-F"]
