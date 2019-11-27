@@ -9,7 +9,6 @@ RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" > /etc/apk/reposi
 && echo "nameserver 8.8.8.8" >> /etc/resolv.conf && apk update && apk upgrade \
 && apk add \
 curl \
-wget \
 php7-openssl \
 php7-sqlite3 \
 php7-pear \
